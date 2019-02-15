@@ -1,0 +1,124 @@
+{
+	"variables": [],
+	"info": {
+		"name": "xotv",
+		"_postman_id": "db4688a0-b6e2-f3f9-ca12-7a56efd11817",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET endpoint that returns the monthly price for broadband",
+			"request": {
+				"url": {
+					"raw": "localhost/xotv/product/b_monthly_price_read.php?provider_name=BSNL&product_name=100MB",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"xotv",
+						"product",
+						"b_monthly_price_read.php"
+					],
+					"query": [
+						{
+							"key": "provider_name",
+							"value": "BSNL",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "product_name",
+							"value": "100MB",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "",
+						"value": "",
+						"description": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"provider_name\" : \"BSNL\",\n    \"product_name\" : \"100MB\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "A GET endpoint for energy price",
+			"request": {
+				"url": {
+					"raw": "localhost/xotv/product/energy_price_read.php?provider_name=Indane energy&product_name=Standard tariff&variation_type=North",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"xotv",
+						"product",
+						"energy_price_read.php"
+					],
+					"query": [
+						{
+							"key": "provider_name",
+							"value": "Indane energy",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "product_name",
+							"value": "Standard tariff",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "variation_type",
+							"value": "North",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "A PATCH endpoint that updates an energy price",
+			"request": {
+				"url": "localhost/xotv/product/update_energy_price.php",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"provider_name\" : \"Indane energy\",\n    \"product_name\" : \"Standard tariff\",\n  \t\"variation_type\" : \"north\",\n  \t\"monthly_price\" : \"12.12\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
